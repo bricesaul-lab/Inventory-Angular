@@ -1,0 +1,75 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login__form {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  background-color: var(--secondary-color);
+  padding: 4em 2em;
+}
+
+.login-submit__btn {
+  border: none;
+  outline: none;
+  color: var(--primary-text-color);
+  background-color: var(--third-business-color);
+  padding: 0.4em 0.8em;
+}
+
+.login-submit__btn--active {
+  cursor: pointer;
+  color: white;
+  background-color: var(--primary-business-color);
+}
+
+.login-form-link__container {
+  display: flex;
+  justify-content: end;
+  background-color: var();
+  gap: 1em;
+}
+
+.login-form__link {
+  color: var(--primary-text-color);
+
+  &:hover {
+    color: var(--primary-business-color-hover);
+  }
+}
+
+@media (min-width: 360px) and (max-width: 820px) {
+  .login__form {
+    width: 80%;
+    background-color: var(--secondary-color);
+    height: 50%;
+  }
+
+  .login-form-link__container {
+    justify-content: space-between;
+    background-color: var();
+  }
+}
+
+.login__credentials {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: var(--secondary-color);
+  padding: 2em;
+  margin-top: 2em;
+}
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

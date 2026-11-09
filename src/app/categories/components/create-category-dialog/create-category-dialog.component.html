@@ -1,0 +1,65 @@
+<dialog
+  title="Create category dialog"
+  class="add-product__dialog"
+>
+  <h2 class="add-product-dialog__title">{{ title() }}</h2>
+  <form
+    class="add-product-dialog__form"
+    [formGroup]="formGroup"
+    (submit)="submit($event)"
+  >
+    <div class="form-input-container">
+      <app-input-with-label
+        formControlName="name"
+        for="category-name-input"
+        placeholder="Nombre"
+        type="text"
+      />
+      @if (isPristineField("name") && isValidField("name")) {
+        <span class="form-error">{{ handlerFormErrors("name") }}</span>
+      }
+    </div>
+
+    <div class="form-input-container">
+      <app-input-with-label
+        formControlName="description"
+        for="category-description-input"
+        placeholder="Descripcion"
+        type="text"
+      />
+      @if (isPristineField("description") && isValidField("description")) {
+        <span class="form-error">{{ handlerFormErrors("description") }}</span>
+      }
+    </div>
+
+
+    <div class="form-input-container">
+      <app-input-with-label
+        formControlName="image"
+        for="category-image-input"
+        placeholder="Imagen"
+        type="file"
+      />
+      @if (isPristineField("image") && isValidField("image")) {
+        <span class="form-error">{{ handlerFormErrors("image") }}</span>
+      }
+    </div>
+
+    <div class="add-product-dialog__btn-container">
+      <button
+        type="submit"
+        (click)="cancel()"
+        class="add-product-dialog__btn add-product-dialog__btn--cancel"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        (submit)="submit($event)"
+        class="add-product-dialog__btn add-product-dialog__btn--accept"
+      >
+        Crear
+      </button>
+    </div>
+  </form>
+</dialog>
